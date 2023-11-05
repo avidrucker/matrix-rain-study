@@ -1,0 +1,38 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+  }
+  .stream {
+    font-size: 24px;
+	display: flex;
+	flex-direction: column;
+  }
+
+  .stream span {
+	opacity: 0;
+	transition: opacity 0.5s;
+  }
+  
+  .stream span.blip {
+	opacity: 1;
+  }
+
+	/* color: #0aff0a;
+	font-family: 'Roboto Mono', monospace; */
+	
+/* .matrix-rain-stream span:nth-child(1) { opacity: 0.1; }
+.matrix-rain-stream span:nth-child(2) { opacity: 0.2; }
+.matrix-rain-stream span:nth-child(3) { opacity: 0.3; }
+.matrix-rain-stream span:nth-child(4) { opacity: 0.4; }
+.matrix-rain-stream span:nth-child(5) { opacity: 0.5; }
+.matrix-rain-stream span:nth-child(6) { opacity: 0.6; }
+.matrix-rain-stream span:nth-child(7) { opacity: 0.7; }
+.matrix-rain-stream span:nth-child(8) { opacity: 0.8; }
+.matrix-rain-stream span:nth-child(9) { opacity: 0.9; } */
