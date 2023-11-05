@@ -8,31 +8,34 @@ function startMatrixAnimation(fps) {
 	const stream = document.querySelector('.stream');
 	const children = stream.children;
 	let i = 0;
-	let goingDown = true; // New variable to track direction of animation
-  
+	let blippingIn = true; // Variable to track whether we're adding or removing the "blip"
+	
 	function blipNext() {
-	  if (goingDown) {
+	  if (blippingIn) {
 		if (i < children.length) {
-		  children[i].classList.add('blip');
+		  if (i !== 0) {
+			children[i - 1].classList.add('rain-body');
+		  }
+		  children[i].classList.add('fade-out', 'rain-body');
 		  i++;
 		} else {
-		  goingDown = false;
-		  i--; // Start removing classes from the last element
+		  blippingIn = false;
+		  i = 0;
 		}
 	  } else {
-		if (i >= 0) {
-		  children[i].classList.remove('blip');
-		  i--;
+		if (i < children.length) {
+		  children[i].classList.remove('fade-out', 'rain-body');
+		  i++;
 		} else {
-		  goingDown = true;
-		  i++; // Start adding classes from the first element
+		  blippingIn = true;
+		  i = 0;
 		}
 	  }
 	}
-  
+	
 	setInterval(blipNext, interval);
   }
   
   // Start the animation at 1 FPS for demonstration purposes
-  startMatrixAnimation(1);
+  startMatrixAnimation(6);
   
