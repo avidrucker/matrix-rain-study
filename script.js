@@ -8,17 +8,29 @@ function startMatrixAnimation(fps) {
 	const stream = document.querySelector('.stream');
 	const children = stream.children;
 	let i = 0;
+	let goingDown = true; // New variable to track direction of animation
   
 	function blipNext() {
-	  if (i < children.length) {
-		children[i].classList.add('blip');
-		i++;
+	  if (goingDown) {
+		if (i < children.length) {
+		  children[i].classList.add('blip');
+		  i++;
+		} else {
+		  goingDown = false;
+		  i--; // Start removing classes from the last element
+		}
 	  } else {
-		clearInterval(intervalId); // Stop the interval when done
+		if (i >= 0) {
+		  children[i].classList.remove('blip');
+		  i--;
+		} else {
+		  goingDown = true;
+		  i++; // Start adding classes from the first element
+		}
 	  }
 	}
   
-	const intervalId = setInterval(blipNext, interval);
+	setInterval(blipNext, interval);
   }
   
   // Start the animation at 1 FPS for demonstration purposes
