@@ -54,23 +54,21 @@ function isKatakana(character) {
 
 // Call this function to initialize the streams with random characters
 function initializeStreams(selectors) {
-  selectors
-    .map((x) => "#" + x)
-    .forEach((selector) => {
-      const streamContainer = document.querySelector(selector);
-      const randomStream = generateRandomStream(streamLength);
-      streamContainer.innerHTML = ""; // Clear the current stream
-      for (const char of randomStream) {
-        const span = document.createElement("span");
-        span.textContent = char;
-        span.classList.add("o-0");
-        // Optionally add a class if it's a Katakana character
-        if (isKatakana(char)) {
-          span.classList.add("katakana");
-        }
-        streamContainer.appendChild(span);
-      }
-    });
+	selectors
+		.map((x) => "#" + x)
+		.forEach((selector) => {
+			const streamContainer = document.querySelector(selector);
+			const randomStream = generateRandomStream(streamLength);
+			let streamHTML = ""; // Create a single string of HTML
+			for (const char of randomStream) {
+				let spanClass = "o-0";
+				if (isKatakana(char)) {
+					spanClass += " katakana";
+				}
+				streamHTML += `<span class="${spanClass}">${char}</span>`; // Add each span to the HTML string
+			}
+			streamContainer.innerHTML = streamHTML; // Set the innerHTML of the container once
+		});
 }
 
 function reinitializeStream(selector) {
