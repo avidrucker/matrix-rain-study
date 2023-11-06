@@ -13,8 +13,12 @@ function createSelectors(cnt) {
   }
   return selectors;
 }
-
-const selectors = createSelectors(20);
+const hiddenTextTester = document.getElementById("hiddenTextTester");
+const widthOfHiddenText = hiddenTextTester.offsetWidth;
+const widthOfMatrixContainer = container.offsetWidth; // 100vw
+const numberOfStreamColumns = Math.floor(widthOfMatrixContainer / widthOfHiddenText) - 1;
+console.log("numberOfStreamColumns", numberOfStreamColumns);
+const selectors = createSelectors(numberOfStreamColumns);
 
 function setupColumns(docSelector, streamSelectors) {
   const streamContainer = document.querySelector(docSelector);
