@@ -8,44 +8,50 @@ body, html {
 	left: 0;
 	top: 0;
     font-family: 'Roboto Mono', monospace;
-  }
+}
 
-  #matrixContainer {
+#matrixContainer {
 	display: flex;
-  }
+}
 
-  .stream {
+.stream {
     font-size: 24px;
 	width: 24px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-  }
-
-  .stream span {
 	color: white;
-	opacity: 1;
-  }
+}
 
-  .stream span.rain-body {
-	color: #0aff0a; /* White for the newest blipped character */
-	/* transition: none; */
-  }
-  
-  .stream span.fade-out {
+.stream span {
+	text-shadow:
+    0 0 5px #0aff0a,
+    0 0 10px #0aff0a,
+    0 0 15px #0aff0a,
+    0 0 20px #0aff0a;
+}
+
+.o-0 {
 	opacity: 0;
-	transition: opacity 1s;
-  }
+}
 
-	/* 
-	font-family: 'Roboto Mono', monospace; */
-	
-/* .matrix-rain-stream span:nth-child(1) { opacity: 0.1; }
-.matrix-rain-stream span:nth-child(2) { opacity: 0.2; }
-.matrix-rain-stream span:nth-child(3) { opacity: 0.3; }
-.matrix-rain-stream span:nth-child(4) { opacity: 0.4; }
-.matrix-rain-stream span:nth-child(5) { opacity: 0.5; }
-.matrix-rain-stream span:nth-child(6) { opacity: 0.6; }
-.matrix-rain-stream span:nth-child(7) { opacity: 0.7; }
-.matrix-rain-stream span:nth-child(8) { opacity: 0.8; }
-.matrix-rain-stream span:nth-child(9) { opacity: 0.9; } */
+.o-100 {
+	opacity: 1;
+}
+
+.white {
+	color: white;
+}
+
+.matrix-green {
+	color: #0aff0a;
+}
+  
+.fade-out {
+	opacity: 0;
+	transition: opacity 3s;
+}
+
+.katakana {
+	transform: scaleX(-1);
+}
