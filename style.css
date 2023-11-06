@@ -27,7 +27,9 @@ html {
   display: flex;
   flex-direction: column;
   color: white;
+  min-width: 1ch;
 }
+
 
 .stream span {
   text-shadow: 0 0 5px #0aff0a, 0 0 10px #0aff0a, 0 0 15px #0aff0a,
