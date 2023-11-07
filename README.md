@@ -1,7 +1,7 @@
 # Matrix Rain Study
 ![Matrix Rain Study Preview](preview.gif)
 
-Click [here](https://lettucegoblin.github.io/matrix-rain-study/) to view the project.
+Click [here](https://avidrucker.github.io/matrix-rain-study/) to view the project.
 
 ## Description
 
