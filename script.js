@@ -190,8 +190,6 @@ function startMatrixAnimation(fps, selector) {
 }
 
 // Start the animations for each stream
-selectors
-  .map((x) => "#" + x)
-  .forEach((selector) => {
-    startMatrixAnimation(12, selector);
-  });
+selectors.map(x => '#' + x).forEach(selector => {
+  startMatrixAnimation(24, selector);
+});
